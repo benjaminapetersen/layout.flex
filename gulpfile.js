@@ -46,7 +46,7 @@
   };
 
   gulp.task('clean', () => {
-    return del([distAll, tmpAll, './dist_new/'], (err, paths) => {
+    return del([distAll, tmpAll], (err, paths) => {
       return gutil.log('cleaned files/folders:\n', paths.join('\n'), gutil.colors.green());
     });
   });
