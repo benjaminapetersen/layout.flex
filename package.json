@@ -1,0 +1,37 @@
+{
+  "name": "layout.flex",
+  "version": "0.0.1",
+  "description": "Small, composable flex utilities. Conceptually similar to Polymer CSS layout & Angular Material CSS but agnostic to look and feel.",
+  "main": [
+    "dist/layout.flex.classes.min.css"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benjaminapetersen/layout.flex.git"
+  },
+  "authors": [
+    "benjaminapetersen <admin@benjaminapetersen.me>",
+    "sg00dwin <sgoodwin@redhat.com>",
+    "rhamilto <rhamilto@redhat.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/benjaminapetersen/layout.flex/issues"
+  },
+  "homepage": "https://github.com/benjaminapetersen/layout.flex",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-dest": "^0.2.3",
+    "gulp-filesize": "0.0.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0"
+  }
+}
