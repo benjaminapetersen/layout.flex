@@ -85,6 +85,14 @@
 
   gulp.task('sass-all', ['sass-classes', 'sass-attrs']);
 
+  // TODO: certain modules should/could be separated out as optional
+  // for file size savings as they were with the older version.
+  // - flex-resize.css
+  // - flex-axis-shorthand.css
+
+  // TODO: get the flex-resize-fix & check phillip waltons posts!
+  // TODO: prob need to build something & test in IE, etc...
+
   gulp.task('min-classes', ['sass-classes'], () => {
     return gulp
       .src(distClasses + match.recurse)
@@ -101,11 +109,11 @@
       .pipe(gulp.dest(dist));
   });
 
-  gulp.task('min-all', [ 'min-classes', 'min-attrs' ]);
+  gulp.task('min', [ 'min-classes', 'min-attrs' ]);
 
   gulp.task('default', () => {
     // watch all sass files and re-run the min
-    gulp.watch(sassAll,['min-all']);
+    gulp.watch(sassAll,['min']);
   });
 
 })();
