@@ -8,16 +8,29 @@ Design component.  This project is intended to be generic flex.
 More to come, in the meantime see the README from layout.attrs above, the same functionality
 has been preserved, but now both classes & attributes on DOM nodes is supported.
 
-# Installing
+## Installing
 
 Coming soon, this repo has not yet been registered with bower or npm (but [layout.attrs](https://github.com/benjaminapetersen/layout.attrs) has).
 <!--
 `bower install layout.flex`
 -->
 
-# Using
+## Using
 
-## Everything (~50kb)
+The payload ranges from the `~6kb` core to `~60kb` full depending on the features you want to support.  The `core` is just about everything you need, the `all` files include some nice to have features at file size expense.
+
+### Core (~10kb)
+
+ The simplest option at the smallest payload is to include one of the following pre-minified `core` files:
+
+```html
+<!-- for classes, use this file -->
+<link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.classes.core.css" />
+<!-- for attrs, use this file -->
+<link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.attrs.core.css" />
+```
+
+### Everything (~50kb)
 
 To use all of the features provided, include one of the minified files in the `/dist` folder.  Choose either attributes or classes.  This will run you about `55kb`, but only 2 (optional) modules make up the bulk of that.  See the next section to dramatically reduce the payload.
 
@@ -26,29 +39,23 @@ are using no other css framework, then the additional bytes may be irrelevant to
 
 ```html
 <!-- for classes, use this file -->
-<link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.classes.css" />
+<link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.classes.all.css" />
 <!-- for attrs, use this file -->
-<link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.attrs.css" />
+<link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.attrs.all.css" />
 ```
 
-## Choose, and shrink the payload (~10kb for core)
+### Pick and Choose
 
-Want a smaller payload (your answer probably should be "yes")? Include only the modules you need from either `dist/classes` or `dist/attrs`.    The following set is the core modules, it leaves out just 2 of the shorthand modules but will drop the payload down to around `10kb`:
+Alternatively, you can include only the modules you need from either `dist/classes` or `dist/attrs`.    The following set illustrates how to use just 2 of the modules, coming in at around `~3kb`:
 
 ```html
 <!-- for classes -->
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-layout.classes.scc" />
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-grow.classes.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-axis.classes.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-order.classes.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-media-query.classes.scc" />
 
 <!-- for attributes -->
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-layout.attrs.scc" />
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-grow.attrs.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-axis.attrs.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-order.attrs.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-media-query.attrs.scc" />
 
 ```
 

@@ -45,6 +45,32 @@
     outputStyle: 'expanded'
   };
 
+  // core represents the main framework of about 10kb of css (before min)
+  let core = [
+    'flex-layout',
+    'flex-axis',
+    'flex-grow',
+    'flex-order',
+    'flex-media-query'
+  ];
+
+  // let nonCore = [
+  //   'flex-resize',
+  //   'flex-axis-shorthand'
+  // ];
+  let distCoreClassPaths = core.map((str) => {
+    // creates:  ./dist/classes/flex-layout.classes.css
+    return dist + 'classes/' + str + '.classes.css';
+  });
+  let distCoreAttrsPaths = core.map((str) => {
+    // creates:  ./dist/classes/flex-layout.classes.css
+    return dist + 'attrs/' + str + '.attrs.css';
+  });
+
+  console.log('paths:');
+  console.log(distCoreClassPaths);
+  console.log(distCoreAttrsPaths);
+
   gulp.task('clean', () => {
     return del([distAll, tmpAll], (err, paths) => {
       return gutil.log('cleaned files/folders:\n', paths.join('\n'), gutil.colors.green());
@@ -85,35 +111,47 @@
 
   gulp.task('sass-all', ['sass-classes', 'sass-attrs']);
 
-  // TODO: certain modules should/could be separated out as optional
-  // for file size savings as they were with the older version.
-  // - flex-resize.css
-  // - flex-axis-shorthand.css
+  gulp.task('min-classes-core', ['sass-classes'], () => {
+    return gulp
+      .src(distCoreClassPaths)
+      .pipe(concat('layout.flex.classes.core.css'))
+      .pipe(minifycss({compatibility: 'ie8'}))
+      .pipe(gulp.dest(dist));
+  });
+  gulp.task('min-attrs-core', ['sass-classes'], () => {
+    return gulp
+      .src(distCoreAttrsPaths)
+      .pipe(concat('layout.flex.attrs.core.css'))
+      .pipe(minifycss({compatibility: 'ie8'}))
+      .pipe(gulp.dest(dist));
+  });
 
-  // TODO: get the flex-resize-fix & check phillip waltons posts!
-  // TODO: prob need to build something & test in IE, etc...
-
-  gulp.task('min-classes', ['sass-classes'], () => {
+  gulp.task('min-classes-all', ['sass-classes'], () => {
     return gulp
       .src(distClasses + match.recurse)
-      .pipe(concat('layout.flex.classes.css'))
+      .pipe(concat('layout.flex.classes.all.css'))
       .pipe(minifycss({compatibility: 'ie8'}))
       .pipe(gulp.dest(dist));
   });
 
-  gulp.task('min-attrs', ['sass-attrs'], () => {
+  gulp.task('min-attrs-all', ['sass-attrs'], () => {
     return gulp
       .src(distAttrs + match.recurse)
-      .pipe(concat('layout.flex.attrs.css'))
+      .pipe(concat('layout.flex.attrs.all.css'))
       .pipe(minifycss({compatibility: 'ie8'}))
       .pipe(gulp.dest(dist));
   });
 
-  gulp.task('min', [ 'min-classes', 'min-attrs' ]);
+  gulp.task('min', [ 'min-classes-all', 'min-attrs-all', 'min-classes-core', 'min-attrs-core']);
 
-  gulp.task('default', () => {
+  gulp.task('watch', () => {
     // watch all sass files and re-run the min
     gulp.watch(sassAll,['min']);
   });
+
+  gulp.task('default', ['min']);
+  // TODO: get the flex-resize-fix & check phillip waltons posts!
+  // TODO: prob need to build something & test in IE, etc...
+
 
 })();
