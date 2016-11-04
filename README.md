@@ -19,11 +19,12 @@ Coming soon, this repo has not yet been registered with bower or npm (but [layou
 
 ## Everything (~50kb)
 
-To use all of the features provided, include one of the minified files in the `/dist` folder.  Choose either attributes or classes.  This will run you about `55kb`:
+To use all of the features provided, include one of the minified files in the `/dist` folder.  Choose either attributes or classes.  This will run you about `55kb`, but only 2 (optional) modules make up the bulk of that.  See the next section to dramatically reduce the payload.
 
 ```html
-<!-- You don't need both!  Choose your preferred style -->
+<!-- for classes, use this file -->
 <link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.classes.css" />
+<!-- for attrs, use this file -->
 <link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.attrs.css" />
 ```
 
