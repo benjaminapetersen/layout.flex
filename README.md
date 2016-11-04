@@ -27,6 +27,8 @@ To use all of the features provided, include one of the minified files in the `/
 <link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.attrs.css" />
 ```
 
+## Choose, and shrink the payload
+
 Want a smaller payload (your answer probably should be "yes")? Include only the modules you need from either `dist/classes` or `dist/attrs`.    The following set is the core modules, it leaves out just 2 of the shorthand modules but will drop the payload down to around `10kb`:
 
 ```html
