@@ -11,19 +11,19 @@
      <div flex axis="center center center">
 ----------------------------------------------- */
 /* primary two xis */
-@each $jc-key, $jc-val in $justifyContentMap {
-    @each $ai-key, $ai-val in $alignItemsMap {
-        .#{$prefix}axis-#{$jc-key}-#{$ai-key} {
+@each $jc-key, $jc-val in $fxJustifyContentMap {
+    @each $ai-key, $ai-val in $fxAlignItemsMap {
+        .#{$fxPrefix}axis-#{$jc-key}-#{$ai-key} {
             justify-content: $jc-val;
             align-items: $ai-val;
         }
     }
 }
 /* all three */
-@each $jc-key, $jc-val in $justifyContentMap {
-    @each $ai-key, $ai-val in $alignItemsMap {
-        @each $ac-key, $ac-val in $alignContentMap {
-            .#{$prefix}axis-#{$jc-key}-#{$ai-key}-#{$ac-key} {
+@each $jc-key, $jc-val in $fxJustifyContentMap {
+    @each $ai-key, $ai-val in $fxAlignItemsMap {
+        @each $ac-key, $ac-val in $fxAlignContentMap {
+            .#{$fxPrefix}axis-#{$jc-key}-#{$ai-key}-#{$ac-key} {
                 justify-content: $jc-val;
                 align-items: $ai-val;
                 align-content: $ac-val;

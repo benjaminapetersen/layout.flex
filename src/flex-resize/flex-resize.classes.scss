@@ -11,7 +11,7 @@
 ----------------------------------------------- */
 @for $grow from 0 through 12 {
     @for $shrink from 0 through 12 {
-       .#{$prefix}resize-#{$grow}-#{$shrink} {
+       .#{$fxPrefix}resize-#{$grow}-#{$shrink} {
             flex-grow: $grow;
             flex-shrink: $shrink;
         }

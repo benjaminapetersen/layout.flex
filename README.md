@@ -38,15 +38,34 @@ Want a smaller payload (your answer probably should be "yes")? Include only the 
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-grow.classes.scc" />
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-axis.classes.scc" />
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-order.classes.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-media-queries.classes.scc" />
+<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-media-query.classes.scc" />
 
 <!-- for attributes -->
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-layout.attrs.scc" />
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-grow.attrs.scc" />
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-axis.attrs.scc" />
 <link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-order.attrs.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-media-queries.attrs.scc" />
+<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-media-query.attrs.scc" />
 
 ```
 
+## Custom prefix to avoid collisions with existing frameworks
+
+In case you need to install alongside another framework, copy the `variables.scss` file into your project and replace the `$prefix` variable at the top of the file, then `@include` the modules you need:
+
+```scss
+@import 'variables';  // copy of /path/to/layout.flex/variables.scss with updated $fxPrefix.
+@import '/path/to/layout.flex/src/flex-layout/flex-layout.classes';
+@import '/path/to/layout.flex/src/flex-grow/flex-grow.classes';
+@import '/path/to/layout.flex/src/flex-order/flex-order.classes';
+@import '/path/to/layout.flex/src/flex-order/flex-media-query.classes';
+@import '/path/to/layout.flex/src/flex-order/flex-axis.classes';
+```
+
 ## Docs & Demos
+
+Coming soon, some common examples of usage in the `/demo` folder.
+
+<!--
+  use rawgit or raw.githubusercontent.com or gist.githubusercontent.com links here to make it actually viewable in the browser
+-->

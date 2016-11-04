@@ -17,9 +17,9 @@
 // type-of(true)   => bool
 // type-of(#fff)   => color
 // type-of(blue)   => color
-@each $growProp in $growPropsList {
+@each $growProp in $fxGrowPropsList {
   @for $i from 1 through 12 {
-    #{make-attr-names($growProp, $i, $prefix)} {
+    #{make-attr-names($growProp, $i, $fxPrefix)} {
         flex-#{$growProp}: $i;
     }
   }

@@ -3,8 +3,8 @@
 
 // order="1", order="2" style
 // -----------------------------------
-@each $orderSet in $orderList {
-  #{make-attr-names($orderProp, last($orderSet), $prefix)}, #{make-attr-names(first($orderSet), null, $prefix )} {
-    #{$orderProp}: last($orderSet);
+@each $orderSet in $fxOrderList {
+  #{make-attr-names(order, last($orderSet), $fxPrefix)}, #{make-attr-names(first($orderSet), null, $fxPrefix )} {
+    order: last($orderSet);
   }
 }

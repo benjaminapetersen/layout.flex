@@ -3,16 +3,16 @@
 
 /* main axis
 ----------------------------------------------- */
-@each $key, $val in $justifyContentMap {
-  .#{make-dash-name(main-axis, $key, $prefix)} {
+@each $key, $val in $fxJustifyContentMap {
+  .#{make-dash-name(main-axis, $key, $fxPrefix)} {
     justify-content: #{$val};
   }
 }
 
 /* cross axis
 ----------------------------------------------- */
-@each $key, $val in $alignItemsMap {
-  .#{make-dash-name(cross-axis, $key, $prefix)} {
+@each $key, $val in $fxAlignItemsMap {
+  .#{make-dash-name(cross-axis, $key, $fxPrefix)} {
     align-items: #{$val};
   }
 }
@@ -22,16 +22,16 @@
     NOTE: this does nothing if there is a
     single line of content in the container (spec)
 ----------------------------------------------- */
-@each $key, $val in $alignContentMap {
-  .#{make-dash-name(cross-axis-align, $key, $prefix)} {
+@each $key, $val in $fxAlignContentMap {
+  .#{make-dash-name(cross-axis-align, $key, $fxPrefix)} {
     align-content: #{$val};
   }
 }
 
 /* self, for overriding the parent settings above
 ----------------------------------------------- */
-@each $key, $val in $alignItemsMap {
-  .#{make-dash-name(self, $key, $prefix)} {
+@each $key, $val in $fxAlignItemsMap {
+  .#{make-dash-name(self, $key, $fxPrefix)} {
     align-self: #{$val};
   }
 }

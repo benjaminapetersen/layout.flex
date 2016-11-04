@@ -10,14 +10,14 @@
 }
 
 
-// numbers  
+// numbers
 // -----------------------------------------------
 // - generates values in ems based on px sizes
-// - $base-font variable in variables.scss can change scale
-// - defaults to 14 if $base-font is not defined
+// - $fxBaseFont variable in variables.scss can change scale
+// - defaults to 14 if $fxBaseFont is not defined
 @function em($val) {
   @if variable-exists(base-font) {
-      @return ($val / $base-font ) * 1em;
+      @return ($val / $fxBaseFont ) * 1em;
   }@else {
       @return ($val / 14 ) * 1em;
   }
@@ -109,18 +109,18 @@
 // flex
 // row-inline
 // NOTE: does not return a valid selector!
-@function make-dash-name($name, $mod, $prefix) {
+@function make-dash-name($name, $mod, $fxPrefix) {
   @if $mod {
-    @return #{$prefix}#{$name}-#{$mod};
+    @return #{$fxPrefix}#{$name}-#{$mod};
   }
-  @return #{$prefix}#{$name};
+  @return #{$fxPrefix}#{$name};
 }
 
 // for attr names that are key-value pairs:
 // <name>="<mod>"
 // basis="auto"
 // NOTE: does not return a valid selector!
-@function make-key-eq-val-name($name, $mod, $prefix) {
+@function make-key-eq-val-name($name, $mod, $fxPrefix) {
   //
   // @if type-of($name) != "string" {
   //   @warn "$name: `#{$name}` is not a string";
@@ -130,7 +130,7 @@
   //   @warn "$mod: `#{$mod}` is not a string";
   // }
   @if $mod {
-    @return '#{$prefix}#{$name}="#{$mod}"';
+    @return '#{$fxPrefix}#{$name}="#{$mod}"';
   }
   @return false;
 }
@@ -139,10 +139,10 @@
 // .row
 // .row-reverse
 // .row.reverse
-@function make-class-names($name, $mod, $prefix) {
-  $dash-name: make-dash-name($name, $mod, $prefix);
+@function make-class-names($name, $mod, $fxPrefix) {
+  $dash-name: make-dash-name($name, $mod, $fxPrefix);
   // note: we don't need key-val-name for classes, but its a proxy for now
-  $key-val-name: make-key-eq-val-name($name, $mod, $prefix);
+  $key-val-name: make-key-eq-val-name($name, $mod, $fxPrefix);
   @if $key-val-name {
     @if(type-of($mod) == string) {
       @return '.#{$dash-name}, .#{$name}.#{$mod}';
@@ -168,15 +168,15 @@
 //
 // TODO: should we generate data-* attrs?
 //
-@function make-attr-names($name, $mod, $prefix) {
-  $key-val-name: make-key-eq-val-name($name, $mod, $prefix);
-  $dash-name: make-dash-name($name, $mod, $prefix);
+@function make-attr-names($name, $mod, $fxPrefix) {
+  $key-val-name: make-key-eq-val-name($name, $mod, $fxPrefix);
+  $dash-name: make-dash-name($name, $mod, $fxPrefix);
 
   // if we have a key="val" name generated,
   // we can also create [key][val]
   @if $key-val-name {
     @if(type-of($mod) == string) {
-      @return '[#{$key-val-name}], [#{$dash-name}], [#{$prefix}#{$name}][#{$prefix}#{$mod}]';
+      @return '[#{$key-val-name}], [#{$dash-name}], [#{$fxPrefix}#{$name}][#{$fxPrefix}#{$mod}]';
     } @else {
       @return '[#{$key-val-name}], [#{$dash-name}]';
     }

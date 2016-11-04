@@ -1,51 +1,51 @@
 // basic vars
 // -----------------------------------------------
 // optional prefix could be useful for namespace
-$prefix: 'fx-'; // data- for attribs
-$base-font: 14;
+$fxPrefix: ''; // data- for attribs
+$fxBaseFont: 14;
 
 // This set is quite small.
-$num-nil: 0;
-// $num-xs: 1;
-// $num-sm: 2;
-// $num-md: 3;
-// $num-lg: 5;
-// $num-xl: 8;
-// $num-xxl: 10;
-// $num-xxxl: 12;
-// $num-xxxxl: 15;
-// $num-max: 300;
+$fxNumNil: 0;
+// $fxNumXS: 1;
+// $fxNumSM: 2;
+// $fxNumMD: 3;
+// $fxNumLG: 5;
+// $fxNumXL: 8;
+// $fxNumXXL: 10;
+// $fxNumXXXL: 12;
+// $fxNumXXXXL: 15;
+// $fxNumMax: 300;
 // Is larger numbers better?
-$num-xs: 2;
-$num-sm: 4;
-$num-md: 6;
-$num-lg: 10;
-$num-xl: 15;
-$num-xxl: 20;
-$num-xxxl: 30;
-$num-xxxxl: 40;
-$num-max: 300;
+$fxNumXS: 2;
+$fxNumSM: 4;
+$fxNumMD: 6;
+$fxNumLG: 10;
+$fxNumXL: 15;
+$fxNumXXL: 20;
+$fxNumXXXL: 30;
+$fxNumXXXXL: 40;
+$fxNumMax: 300;
 
 // use functions to make units:
 // px($num) -> 10px,
 // em($num) -> 10em,
 // etc.
-$numMap: (  nil: $num-nil,
-            xs: $num-xs,
-            sm: $num-sm,
-            md: $num-md,
-            lg: $num-lg,
-            xl: $num-xl,
-            xxl: $num-xxl,
-            xxxl: $num-xxxl,
-            xxxxl: $num-xxxxl,
-            max: $num-max);
+$fxNumMap: (  nil: $fxNumNil,
+            xs: $fxNumXS,
+            sm: $fxNumSM,
+            md: $fxNumMD,
+            lg: $fxNumLG,
+            xl: $fxNumXL,
+            xxl: $fxNumXXL,
+            xxxl: $fxNumXXXL,
+            xxxxl: $fxNumXXXXL,
+            max: $fxNumMax);
 
 
 // flex, row, column
 // foundational rules map
 // -----------------------------------------------
-$layoutRules: (
+  $fxLayoutRules: (
   (
     name: layout,
     rules: (
@@ -255,12 +255,12 @@ $layoutRules: (
 
 // grow & shrink
 // -----------------------------------------------
-$growPropsList: (grow, shrink);
+$fxGrowPropsList: (grow, shrink);
 
 
 // order
 // -----------------------------------------------
-$orderList: (
+$fxOrderList: (
   (first, 1),
   (second, 2),
   (third, 3),
@@ -275,24 +275,22 @@ $orderList: (
   (twelfth, 12)
 );
 
-$orderProp: order;
-
 
 // axis maps
 // -----------------------------------------------
-$justifyContentMap: ( start: 'flex-start',
+$fxJustifyContentMap: ( start: 'flex-start',
                       end: 'flex-end',
                       center: 'center',
                       space-between: 'space-between',
                       space-around: 'space-around');
 
-$alignItemsMap:     ( start: 'flex-start',
+$fxAlignItemsMap:     ( start: 'flex-start',
                       end: 'flex-end',
                       center: 'center',
                       stretch: 'stretch',
                       baseline: 'baseline');
 
-$alignContentMap:   ( start: 'flex-start',
+$fxAlignContentMap:   ( start: 'flex-start',
                       end: 'flex-end',
                       center: 'center',
                       stretch: 'stretch',
@@ -302,14 +300,14 @@ $alignContentMap:   ( start: 'flex-start',
 
 // media queries
 // -----------------------------------------------
-$mediaDevices:      ( mobile: 'max-width: 479px',
+$fxMediaDevices:      ( mobile: 'max-width: 479px',
                       tablet: 'max-width: 767px',
                       laptop: 'min-width: 768px) and (max-width: 979px',
                       desktop: 'min-width: 1200px');
 
-$mediaSizes:        ( sm: 'max-width: 479px',
+$fxMediaSizes:        ( sm: 'max-width: 479px',
                       md: 'max-width: 767px',
                       lg: 'min-width: 768px) and (max-width: 979px',
                       xl: 'min-width: 1200px');
 
-$mediaOrientation: column, row;
+$fxMediaOrientation: column, row;

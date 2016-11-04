@@ -3,16 +3,16 @@
 
 /* main axis
 ----------------------------------------------- */
-@each $key, $val in $justifyContentMap {
-  [#{make-key-eq-val-name(main-axis, $key, $prefix)}], [#{make-dash-name(main-axis, $key, $prefix)}] {
+@each $key, $val in $fxJustifyContentMap {
+  [#{make-key-eq-val-name(main-axis, $key, $fxPrefix)}], [#{make-dash-name(main-axis, $key, $fxPrefix)}] {
     justify-content: #{$val};
   }
 }
 
 /* cross axis
 ----------------------------------------------- */
-@each $key, $val in $alignItemsMap {
-  [#{make-key-eq-val-name(cross-axis, $key, $prefix)}], [#{make-dash-name(cross-axis, $key, $prefix)}] {
+@each $key, $val in $fxAlignItemsMap {
+  [#{make-key-eq-val-name(cross-axis, $key, $fxPrefix)}], [#{make-dash-name(cross-axis, $key, $fxPrefix)}] {
     align-items: #{$val};
   }
 }
@@ -22,16 +22,16 @@
     NOTE: this does nothing if there is a
     single line of content in the container (spec)
 ----------------------------------------------- */
-@each $key, $val in $alignContentMap {
-  [#{make-key-eq-val-name(cross-axis-align, $key, $prefix)}], [#{make-dash-name(cross-axis-align, $key, $prefix)}] {
+@each $key, $val in $fxAlignContentMap {
+  [#{make-key-eq-val-name(cross-axis-align, $key, $fxPrefix)}], [#{make-dash-name(cross-axis-align, $key, $fxPrefix)}] {
     align-content: #{$val};
   }
 }
 
 /* self, for overriding the parent settings above
 ----------------------------------------------- */
-@each $key, $val in $alignItemsMap {
-  [#{make-key-eq-val-name(self, $key, $prefix)}], [#{make-dash-name(self, $key, $prefix)}] {
+@each $key, $val in $fxAlignItemsMap {
+  [#{make-key-eq-val-name(self, $key, $fxPrefix)}], [#{make-dash-name(self, $key, $fxPrefix)}] {
     align-self: #{$val};
   }
 }

@@ -6,15 +6,15 @@
    - md="row"
    - etc
 ----------------------------------------------- */
-@each $size, $query in $mediaSizes {
+@each $size, $query in $fxMediaSizes {
   @media (unquote($query)) {
-    @each $orientation in $mediaOrientation {
-      [#{make-key-eq-val-name($size, $orientation, $prefix)}] {
+    @each $orientation in $fxMediaOrientation {
+      [#{make-key-eq-val-name($size, $orientation, $fxPrefix)}] {
         flex-direction: $orientation !important;
       }
     }
 
-    [#{$prefix}conceal~="#{$size}"] {
+    [#{$fxPrefix}conceal~="#{$size}"] {
       display: none !important;
     }
   }
@@ -26,15 +26,15 @@
    - etc.
    @DEPRECATED in favor of sm,md,lg, etc above
 ----------------------------------------------- */
-@each $device, $query in $mediaDevices {
+@each $device, $query in $fxMediaDevices {
   @media (unquote($query)) {
-    @each $orientation in $mediaOrientation {
-      [#{make-key-eq-val-name($device, $orientation, $prefix)}] {
+    @each $orientation in $fxMediaOrientation {
+      [#{make-key-eq-val-name($device, $orientation, $fxPrefix)}] {
         flex-direction: $orientation !important;
       }
     }
 
-    [#{$prefix}conceal~="#{$device}"] {
+    [#{$fxPrefix}conceal~="#{$device}"] {
         display: none !important;
     }
   }
