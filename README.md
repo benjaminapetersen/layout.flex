@@ -21,6 +21,9 @@ Coming soon, this repo has not yet been registered with bower or npm (but [layou
 
 To use all of the features provided, include one of the minified files in the `/dist` folder.  Choose either attributes or classes.  This will run you about `55kb`, but only 2 (optional) modules make up the bulk of that.  See the next section to dramatically reduce the payload.
 
+The `flex-resize` and `flex-axis-shorthand` modules include a preferable syntax, but it comes at a cost to file size. If you
+are using no other css framework, then the additional bytes may be irrelevant to you and you may use the pre-packaged files:
+
 ```html
 <!-- for classes, use this file -->
 <link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.classes.css" />
@@ -62,9 +65,16 @@ In case you need to install alongside another framework, copy the `variables.scs
 @import '/path/to/layout.flex/src/flex-order/flex-axis.classes';
 ```
 
-## Docs & Demos
+## Docs
 
-Coming soon, some common examples of usage in the `/demo` folder.
+Checkout the [docs](./docs) directory.
+- [attrs docs](./docs/attrs.md)
+
+## Demos
+
+Coming soon.
+
+
 
 <!--
   use rawgit or raw.githubusercontent.com or gist.githubusercontent.com links here to make it actually viewable in the browser
