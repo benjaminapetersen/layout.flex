@@ -17,7 +17,9 @@ Coming soon, this repo has not yet been registered with bower or npm (but [layou
 
 ## Using
 
-The payload ranges from the `~6kb` core to `~60kb` full depending on the features you want to support.  The `core` is just about everything you need, the `all` files include some nice to have features at file size expense.
+The payload ranges from the `~6kb` core to `~60kb` full depending on the features you want to support.  The `core` is just about everything you need, the `all` files include some nice to have features at file size expense.  
+
+NOTE: With modern http compression, file size should be little concern.  A test run of `gzip` against the full `layout.flex.attrs.all.css` (`~60kb`) file produced a payload of only `5kb`.
 
 ### Core (~10kb)
 
