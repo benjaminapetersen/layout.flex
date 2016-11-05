@@ -32,7 +32,7 @@ NOTE: With modern http compression, file size should be little concern.  A test 
 <link rel="stylesheet" href="/path/to/layout.flex/dist/layout.flex.attrs.core.css" />
 ```
 
-### Everything (~50kb)
+### Everything (~60kb)
 
 To use all of the features provided, include one of the minified files in the `/dist` folder.  Choose either attributes or classes.  This will run you about `55kb`, but only 2 (optional) modules make up the bulk of that.  See the next section to dramatically reduce the payload.
 
