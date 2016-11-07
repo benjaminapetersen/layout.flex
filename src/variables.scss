@@ -1,45 +1,36 @@
 // basic vars
 // -----------------------------------------------
 // optional prefix could be useful for namespace
-$fxPrefix: ''; // data- for attribs
-$fxBaseFont: 14;
+$fxPrefix:    ''; // data- for attribs
+$fxBaseFont:  14;
 
-// This set is quite small.
-$fxNumNil: 0;
-// $fxNumXS: 1;
-// $fxNumSM: 2;
-// $fxNumMD: 3;
-// $fxNumLG: 5;
-// $fxNumXL: 8;
-// $fxNumXXL: 10;
-// $fxNumXXXL: 12;
-// $fxNumXXXXL: 15;
-// $fxNumMax: 300;
-// Is larger numbers better?
-$fxNumXS: 2;
-$fxNumSM: 4;
-$fxNumMD: 6;
-$fxNumLG: 10;
-$fxNumXL: 15;
-$fxNumXXL: 20;
-$fxNumXXXL: 30;
-$fxNumXXXXL: 40;
-$fxNumMax: 300;
+$fxNumNil:    0;
+$fxNumXS:     2;
+$fxNumSM:     4;
+$fxNumMD:     6;
+$fxNumLG:     10;
+$fxNumXL:     15;
+$fxNumXXL:    20;
+$fxNumXXXL:   30;
+$fxNumXXXXL:  40;
+$fxNumMax:    300;
 
 // use functions to make units:
 // px($num) -> 10px,
 // em($num) -> 10em,
 // etc.
-$fxNumMap: (  nil: $fxNumNil,
-            xs: $fxNumXS,
-            sm: $fxNumSM,
-            md: $fxNumMD,
-            lg: $fxNumLG,
-            xl: $fxNumXL,
-            xxl: $fxNumXXL,
-            xxxl: $fxNumXXXL,
-            xxxxl: $fxNumXXXXL,
-            max: $fxNumMax);
+$fxNumMap: (
+  nil:        $fxNumNil,
+  xs:         $fxNumXS,
+  sm:         $fxNumSM,
+  md:         $fxNumMD,
+  lg:         $fxNumLG,
+  xl:         $fxNumXL,
+  xxl:        $fxNumXXL,
+  xxxl:       $fxNumXXXL,
+  xxxxl:      $fxNumXXXXL,
+  max:        $fxNumMax
+);
 
 
 // flex, row, column
@@ -278,36 +269,68 @@ $fxOrderList: (
 
 // axis maps
 // -----------------------------------------------
-$fxJustifyContentMap: ( start: 'flex-start',
-                      end: 'flex-end',
-                      center: 'center',
-                      space-between: 'space-between',
-                      space-around: 'space-around');
+$fxJustifyContentMap: (
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  space-between: 'space-between',
+  space-around: 'space-around'
+);
 
-$fxAlignItemsMap:     ( start: 'flex-start',
-                      end: 'flex-end',
-                      center: 'center',
-                      stretch: 'stretch',
-                      baseline: 'baseline');
+$fxAlignItemsMap: (
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  stretch: 'stretch',
+  baseline: 'baseline'
+);
 
-$fxAlignContentMap:   ( start: 'flex-start',
-                      end: 'flex-end',
-                      center: 'center',
-                      stretch: 'stretch',
-                      space-between: 'space-between',
-                      space-around: 'space-around');
+$fxAlignContentMap: (
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  stretch: 'stretch',
+  space-between: 'space-between',
+  space-around: 'space-around'
+);
 
 
 // media queries
 // -----------------------------------------------
-$fxMediaDevices:      ( mobile: 'max-width: 479px',
-                      tablet: 'max-width: 767px',
-                      laptop: 'min-width: 768px) and (max-width: 979px',
-                      desktop: 'min-width: 1200px');
+$fxMediaDevices: (
+  mobile: 'max-width: 479px',
+  tablet: 'max-width: 767px',
+  laptop: 'min-width: 768px) and (max-width: 979px',
+  desktop: 'min-width: 1200px'
+);
 
-$fxMediaSizes:        ( sm: 'max-width: 479px',
-                      md: 'max-width: 767px',
-                      lg: 'min-width: 768px) and (max-width: 979px',
-                      xl: 'min-width: 1200px');
+$fxMediaSizes: (
+  sm: 'max-width: 479px',
+  md: 'max-width: 767px',
+  lg: 'min-width: 768px) and (max-width: 979px',
+  xl: 'min-width: 1200px'
+);
 
 $fxMediaOrientation: column, row;
+
+
+// spacers fxNumXS
+// -----------------------------------------------
+$fxSpacerNil:   none 0 !important;
+$fxSpacerXS:    xs 3px null;
+$fxSpacerSM:    sm 5px null;
+$fxSpacerMD:    md 10px null;
+$fxSpacerLG:    lg 15px null;
+$fxSpacerXL:    xl 20px null;
+$fxSpacerXXL:   xxl 30px null;
+
+$fxSpacerSides: (top, right, bottom, left);
+$fxSpacerSizes: (
+  $fxSpacerNil,
+  $fxSpacerXS,
+  $fxSpacerSM,
+  $fxSpacerMD,
+  $fxSpacerLG,
+  $fxSpacerXL,
+  $fxSpacerXXL
+);

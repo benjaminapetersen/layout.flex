@@ -1,0 +1,26 @@
+@import '../variables';
+@import '../functions';
+
+.#{$fxPrefix}pad-auto-sides {
+  padding:0 auto;
+}
+.#{$fxPrefix}mar-auto-sides {
+  margin:0 auto;
+}
+// TODO: decide if these should all be run through the em() fn
+@each $size in $fxSpacerSizes {
+  .#{$fxPrefix}pad-#{first($size)} {
+    padding: second($size) (second($size) * 1.5);
+  }
+  .#{$fxPrefix}mar-#{first($size)} {
+    margin: second($size) (second($size) * 1.5);
+  }
+  @each $side in $fxSpacerSides {
+    .#{$fxPrefix}pad-#{first($side)}-#{first($size)} {
+      padding-#{$side}: second($size) third($size);
+    }
+    .#{$fxPrefix}mar-#{first($side)}-#{first($size)} {
+      margin-#{$side}: second($size) third($size);
+    }
+  }
+}
