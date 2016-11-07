@@ -13,9 +13,9 @@
       uglify = require('gulp-uglify'),
       rename = require('gulp-rename'),
       concat = require('gulp-concat'),
-      del = require('del');
-      //browserSync = require('browser-sync'),
-      //reload = browserSync.reload,
+      del = require('del'),
+      browserSync = require('browser-sync'),
+      reload = browserSync.reload;
       //path = require('path'),
       //shell = require('gulp-shell');
 
@@ -45,6 +45,9 @@
     outputStyle: 'expanded'
   };
 
+  // NOTE: using core & nonCore provides a way to order concatonated files,
+  // which is helpful to ensure certain rules don't override others.
+  // for example: 'grow' must be decared after 'flex' in the build output
   // core represents the main framework of about 10kb of css (before min)
   let core = [
     'flex-layout',
@@ -53,23 +56,28 @@
     'flex-order',
     'flex-media-query'
   ];
+  // nonCore are optional due to providing only syntax sugar, or being
+  // naturally larger in file size.
+  let nonCore = [
+    'flex-resize',
+    'flex-axis-shorthand',
+    'spacers'
+  ];
 
-  // let nonCore = [
-  //   'flex-resize',
-  //   'flex-axis-shorthand'
-  // ];
+  // for concat + min from the dist in a particular order
   let distCoreClassPaths = core.map((str) => {
-    // creates:  ./dist/classes/flex-layout.classes.css
     return dist + 'classes/' + str + '.classes.css';
-  });
-  let distCoreAttrsPaths = core.map((str) => {
-    // creates:  ./dist/classes/flex-layout.classes.css
+  }),
+  distCoreAttrsPaths = core.map((str) => {
     return dist + 'attrs/' + str + '.attrs.css';
   });
 
-  console.log('paths:');
-  console.log(distCoreClassPaths);
-  console.log(distCoreAttrsPaths);
+  let distNonCoreClassPaths = nonCore.map((str) => {
+    return dist + 'classes/' + str + '.classes.css';
+  }),
+  distNonCoreAttrsPaths = nonCore.map((str) => {
+    return dist + 'attrs/' + str + '.attrs.css';
+  });
 
   gulp.task('clean', () => {
     return del([distAll, tmpAll], (err, paths) => {
@@ -115,43 +123,57 @@
     return gulp
       .src(distCoreClassPaths)
       .pipe(concat('layout.flex.classes.core.css'))
-      .pipe(minifycss({compatibility: 'ie8'}))
+      //.pipe(minifycss({compatibility: 'ie8'}))
       .pipe(gulp.dest(dist));
   });
   gulp.task('min-attrs-core', ['sass-classes'], () => {
     return gulp
       .src(distCoreAttrsPaths)
       .pipe(concat('layout.flex.attrs.core.css'))
-      .pipe(minifycss({compatibility: 'ie8'}))
+      //.pipe(minifycss({compatibility: 'ie8'}))
       .pipe(gulp.dest(dist));
   });
 
   gulp.task('min-classes-all', ['sass-classes'], () => {
     return gulp
-      .src(distClasses + match.recurse)
+      //.src(distClasses + match.recurse)
+      .src(distCoreClassPaths.concat(distNonCoreClassPaths))
       .pipe(concat('layout.flex.classes.all.css'))
-      .pipe(minifycss({compatibility: 'ie8'}))
+      //.pipe(minifycss({compatibility: 'ie8'}))
       .pipe(gulp.dest(dist));
   });
 
   gulp.task('min-attrs-all', ['sass-attrs'], () => {
     return gulp
-      .src(distAttrs + match.recurse)
+      //.src(distAttrs + match.recurse)
+      .src(distCoreAttrsPaths.concat(distNonCoreAttrsPaths))
       .pipe(concat('layout.flex.attrs.all.css'))
-      .pipe(minifycss({compatibility: 'ie8'}))
+      //.pipe(minifycss({compatibility: 'ie8'}))
       .pipe(gulp.dest(dist));
   });
 
-  gulp.task('min', [ 'min-classes-all', 'min-attrs-all', 'min-classes-core', 'min-attrs-core']);
+  gulp.task('min', [ 'min-classes-all', 'min-attrs-all', 'min-classes-core', 'min-attrs-core'], () => {
+    console.log('MINIFICATION OFF FOR DEBUGGING', '');
+  });
 
+  // watch all sass files and re-run the min
   gulp.task('watch', () => {
-    // watch all sass files and re-run the min
     gulp.watch(sassAll,['min']);
+  });
+
+  gulp.task('serve', () => {
+    console.log('SERVING DEMOS');
+    browserSync({
+      server: {
+        baseDir: './'
+      }
+    });
+    // gulp.watch('demos');
   });
 
   gulp.task('default', ['min']);
   // TODO: get the flex-resize-fix & check phillip waltons posts!
   // TODO: prob need to build something & test in IE, etc...
-
+  // TODO: SPACERS
 
 })();

@@ -1,6 +1,8 @@
 @import '../variables';
 @import '../functions';
 
+// NOTE: the spacers fit best in the realm of classes, they aren't very fitting as attrs.
+// perhaps will drop the generation of this file? complications for building?
 [#{$fxPrefix}pad-auto-sides] {
   padding:0 auto;
 }
