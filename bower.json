@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "authors": [
     "benjaminapetersen <admin@benjaminapetersen.me>",
-		"sg00dwin <sgoodwin@redhat.com",
+    "sg00dwin <sgoodwin@redhat.com",
     "rhamilto <rhamilto@redhat.com>"
   ],
   "description": "Small, composable flex utilities. Conceptually similar to Polymer CSS layout & Angular Material CSS but agnostic to look and feel.",
@@ -16,5 +16,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "normalize-css": "^5.0.0"
+  }
 }

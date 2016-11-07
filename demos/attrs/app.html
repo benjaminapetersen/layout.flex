@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html height-max>
+  <head>
+    <meta charset="utf-8">
+    <title>layout.flex demo</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../bower_components/normalize-css/normalize.css" media="screen">
+    <link rel="stylesheet" href="../../dist/layout.flex.attrs.core.css" media="screen">
+    <link rel="stylesheet" href="../../dist/classes/spacers.classes.css" media="screen">
+    <link rel="stylesheet" href="../theme.css" media="screen">
+  </head>
+  <body fit class="bg-gray-lt font-roboto text-gray-dk">
+
+    <div fit column outline>
+      <header role="banner" outline class="pad-xl">header</header>
+      <nav outline>
+        <ul row outline class="pad-none mar-none">
+          <li outline class="pad-lg">
+            <a href="#">foo</a>
+          </li>
+          <li outline class="pad-lg">
+            <a href="#">bar</a>
+          </li>
+        </ul>
+      </nav>
+      <div row flex outline>
+        <aside flex outline>
+          <ul outline class="pad-none mar-none">
+            <li outline class="pad-lg">
+              <a href="#">foo</a>
+            </li>
+            <li outline class="pad-lg">
+              <a href="#">bar</a>
+            </li>
+          </ul>
+        </aside>
+        <main flex grow="3" outline class="pad-lg">
+          <article outline>
+            <h2>Foo</h2>
+            <p>This is an article about foo.</p>
+          </article>
+          <article outline>
+            <h2>Bar</h2>
+            <p>This is an article about bar.</p>
+          </article>
+          <section outline>
+            <h2>Baz</h2>
+            <p>This is a section about baz.</p>
+          </section>
+        </main>
+        <aside outline class="pad-md">
+          right aside
+        </aside>
+      </div>
+      <footer role="contentinfo" outline class="pad-sm">
+        footer stuff
+      </footer>
+    </div>
+
+  </body>
+</html>
