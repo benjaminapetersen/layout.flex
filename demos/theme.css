@@ -1,15 +1,25 @@
-/* make the object ugly so we can see it in DOM
-object {
-  background-color: #DFFDE1;
-  outline: 2px dashed #009900;
-} */
+/* simple theme
+ -------------------------------- */
 html,
 body {
-
+  background-color: #e2e8f1;
+}
+header {
+  background-color: #324150;
+}
+footer {
+  background-color: #2d2c2c;
 }
 
 ul li, ol li {
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 /* typography
@@ -36,7 +46,11 @@ ul li, ol li {
   background-color: #000;
 }
 .bg-gray-lt {
-  background-color: #f9f9f9;
+  background-color: #eaeaea;
+}
+
+.bg-blue-gray {
+  background-color: #294c61;
 }
 
 /* shadows
@@ -75,7 +89,7 @@ ul li, ol li {
   margin: 12px 36px;
 }
 
-/* margin
+/* widget
  -------------------------------- */
 .widget-sm {
   background-color: #990000;
@@ -88,4 +102,19 @@ ul li, ol li {
 }
 .widget-xl {
   background-color: #990099;
+}
+
+/* square
+ -------------------------------- */
+.square-sx {
+  width: 15px;
+  height: 15px;
+}
+.square-sm {
+  width: 25px;
+  height: 25px;
+}
+.square-md {
+  width: 50px;
+  height: 50px;
 }

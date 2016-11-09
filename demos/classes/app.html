@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="height-max">
+  <head>
+    <meta charset="utf-8">
+    <title>layout.flex demo</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../bower_components/normalize-css/normalize.css" media="screen">
+    <link rel="stylesheet" href="../../dist/layout.flex.classes.core.css" media="screen">
+    <link rel="stylesheet" href="../../dist/classes/spacers.classes.css" media="screen">
+    <link rel="stylesheet" href="../theme.css" media="screen">
+    <style media="screen">
+      .outline {
+        outline: 1px solid #5d5d5d;
+      }
+    </style>
+  </head>
+  <body class="fit outline bg-gray-lt font-roboto text-gray-dk">
+
+    <div class="fit column outline">
+      <header role="banner" class="row cross-axis-center outline bg-blue-gray text-white shadow-sm">
+        <span class="pad-md">layout.flex</span>
+        <nav class="outline">
+          <ul class="row outline pad-none mar-none">
+            <li class="outline pad-lg">
+              <a href="#" class="text-white">foo</a>
+            </li>
+            <li class="outline pad-lg">
+              <a href="#" class="text-white">bar</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="row sm-column flex outline">
+        <aside class="outline">
+          <ul class="outline pad-none mar-none">
+            <li class="outline pad-lg">
+              <a href="#">foo</a>
+            </li>
+            <li class="outline pad-lg">
+              <a href="#">bar</a>
+            </li>
+          </ul>
+        </aside>
+        <main class="flex grow-3 outline pad-lg">
+          <article class="outline pad-sm">
+            <h2>Foo</h2>
+            <p>This is an article about foo.</p>
+          </article>
+          <article class="outline pad-sm">
+            <h2>Bar</h2>
+            <p>This is an article about bar.</p>
+          </article>
+          <section class="outline pad-sm">
+            <h2>Baz</h2>
+            <p>This is a section about baz.</p>
+            <div class="row wrap">
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+              <span class="square-md pad-sm outline">square</span>
+            </div>
+          </section>
+        </main>
+        <aside class="outline pad-md">
+          right aside
+        </aside>
+      </div>
+      <footer role="contentinfo" class="outline pad-md text-white">
+        footer stuff
+      </footer>
+    </div>
+
+  </body>
+</html>

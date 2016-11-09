@@ -8,23 +8,30 @@
     <link rel="stylesheet" href="../../dist/layout.flex.attrs.core.css" media="screen">
     <link rel="stylesheet" href="../../dist/classes/spacers.classes.css" media="screen">
     <link rel="stylesheet" href="../theme.css" media="screen">
+    <style media="screen">
+      [outline] {
+        outline: 1px solid #5d5d5d;
+      }
+    </style>
   </head>
-  <body fit class="bg-gray-lt font-roboto text-gray-dk">
+  <body fit outline class="bg-gray-lt font-roboto text-gray-dk">
 
     <div fit column outline>
-      <header role="banner" outline class="pad-xl">header</header>
-      <nav outline>
-        <ul row outline class="pad-none mar-none">
-          <li outline class="pad-lg">
-            <a href="#">foo</a>
-          </li>
-          <li outline class="pad-lg">
-            <a href="#">bar</a>
-          </li>
-        </ul>
-      </nav>
-      <div row flex outline>
-        <aside flex outline>
+      <header role="banner" row cross-axis-center class="outline bg-blue-gray text-white shadow-sm">
+        <span class="pad-md">layout.flex</span>
+        <nav outline>
+          <ul row outline class="pad-none mar-none">
+            <li outline class="pad-lg">
+              <a href="#" class="text-white">foo</a>
+            </li>
+            <li outline class="pad-lg">
+              <a href="#" class="text-white">bar</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div row sm="column" flex class="outline">
+        <aside outline>
           <ul outline class="pad-none mar-none">
             <li outline class="pad-lg">
               <a href="#">foo</a>
@@ -34,25 +41,49 @@
             </li>
           </ul>
         </aside>
-        <main flex grow="3" outline class="pad-lg">
-          <article outline>
+        <main flex class="grow-3 outline pad-lg">
+          <article outline class="pad-sm">
             <h2>Foo</h2>
             <p>This is an article about foo.</p>
           </article>
-          <article outline>
+          <article outline class="pad-sm">
             <h2>Bar</h2>
             <p>This is an article about bar.</p>
           </article>
-          <section outline>
+          <section outline class="pad-sm">
             <h2>Baz</h2>
             <p>This is a section about baz.</p>
+            <div row wrap>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+              <span outline class="square-md pad-sm">square</span>
+            </div>
           </section>
         </main>
         <aside outline class="pad-md">
           right aside
         </aside>
       </div>
-      <footer role="contentinfo" outline class="pad-sm">
+      <footer role="contentinfo" outline class="pad-md text-white">
         footer stuff
       </footer>
     </div>
