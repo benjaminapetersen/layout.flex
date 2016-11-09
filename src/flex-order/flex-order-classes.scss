@@ -5,7 +5,8 @@
 // order="1", order="2" style
 // -----------------------------------
 @each $orderSet in $fxOrderList {
-  #{make-class-names(order, last($orderSet), $fxPrefix)}, #{make-class-names(first($orderSet), null, $fxPrefix )} {
+  #{make-class-names(order, last($orderSet), $fxOrderClassesPrefix)},
+  #{make-class-names(first($orderSet), null, $fxOrderClassesPrefix )} {
     order: last($orderSet);
   }
 }

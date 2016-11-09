@@ -1,59 +1,71 @@
-[order="1"], [order-1], [first] {
+[order="1"], [order-1],
+[first] {
   -ms-flex-order: 1;
   order: 1;
 }
 
-[order="2"], [order-2], [second] {
+[order="2"], [order-2],
+[second] {
   -ms-flex-order: 2;
   order: 2;
 }
 
-[order="3"], [order-3], [third] {
+[order="3"], [order-3],
+[third] {
   -ms-flex-order: 3;
   order: 3;
 }
 
-[order="4"], [order-4], [fourth] {
+[order="4"], [order-4],
+[fourth] {
   -ms-flex-order: 4;
   order: 4;
 }
 
-[order="5"], [order-5], [fifth] {
+[order="5"], [order-5],
+[fifth] {
   -ms-flex-order: 5;
   order: 5;
 }
 
-[order="6"], [order-6], [sixth] {
+[order="6"], [order-6],
+[sixth] {
   -ms-flex-order: 6;
   order: 6;
 }
 
-[order="7"], [order-7], [seventh] {
+[order="7"], [order-7],
+[seventh] {
   -ms-flex-order: 7;
   order: 7;
 }
 
-[order="8"], [order-8], [eighth] {
+[order="8"], [order-8],
+[eighth] {
   -ms-flex-order: 8;
   order: 8;
 }
 
-[order="9"], [order-9], [ninth] {
+[order="9"], [order-9],
+[ninth] {
   -ms-flex-order: 9;
   order: 9;
 }
 
-[order="10"], [order-10], [tenth] {
+[order="10"], [order-10],
+[tenth] {
   -ms-flex-order: 10;
   order: 10;
 }
 
-[order="11"], [order-11], [eleventh] {
+[order="11"], [order-11],
+[eleventh] {
   -ms-flex-order: 11;
   order: 11;
 }
 
-[order="12"], [order-12], [twelfth] {
+[order="12"], [order-12],
+[twelfth] {
   -ms-flex-order: 12;
   order: 12;
 }

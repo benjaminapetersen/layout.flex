@@ -9,12 +9,12 @@
 @each $size, $query in $fxMediaSizes {
   @media (unquote($query)) {
     @each $orientation in $fxMediaOrientation {
-      [#{make-key-eq-val-name($size, $orientation, $fxPrefix)}] {
+      [#{make-key-eq-val-name($size, $orientation, $fxMediaQueryAttrsPrefix)}] {
         flex-direction: $orientation !important;
       }
     }
 
-    [#{$fxPrefix}conceal~="#{$size}"] {
+    [#{$fxMediaQueryAttrsPrefix}conceal~="#{$size}"] {
       display: none !important;
     }
   }
@@ -29,12 +29,12 @@
 @each $device, $query in $fxMediaDevices {
   @media (unquote($query)) {
     @each $orientation in $fxMediaOrientation {
-      [#{make-key-eq-val-name($device, $orientation, $fxPrefix)}] {
+      [#{make-key-eq-val-name($device, $orientation, $fxMediaQueryAttrsPrefix)}] {
         flex-direction: $orientation !important;
       }
     }
 
-    [#{$fxPrefix}conceal~="#{$device}"] {
+    [#{$fxMediaQueryAttrsPrefix}conceal~="#{$device}"] {
         display: none !important;
     }
   }

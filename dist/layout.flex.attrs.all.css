@@ -165,54 +165,64 @@
 
 /* main axis
 ----------------------------------------------- */
-[main-axis="start"], [main-axis-start] {
+[main-axis="start"],
+[main-axis-start] {
   -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
-[main-axis="end"], [main-axis-end] {
+[main-axis="end"],
+[main-axis-end] {
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
-[main-axis="center"], [main-axis-center] {
+[main-axis="center"],
+[main-axis-center] {
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-[main-axis="space-between"], [main-axis-space-between] {
+[main-axis="space-between"],
+[main-axis-space-between] {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-[main-axis="space-around"], [main-axis-space-around] {
+[main-axis="space-around"],
+[main-axis-space-around] {
   -ms-flex-pack: distribute;
   justify-content: space-around;
 }
 
 /* cross axis
 ----------------------------------------------- */
-[cross-axis="start"], [cross-axis-start] {
+[cross-axis="start"],
+[cross-axis-start] {
   -ms-flex-align: start;
   align-items: flex-start;
 }
 
-[cross-axis="end"], [cross-axis-end] {
+[cross-axis="end"],
+[cross-axis-end] {
   -ms-flex-align: end;
   align-items: flex-end;
 }
 
-[cross-axis="center"], [cross-axis-center] {
+[cross-axis="center"],
+[cross-axis-center] {
   -ms-flex-align: center;
   align-items: center;
 }
 
-[cross-axis="stretch"], [cross-axis-stretch] {
+[cross-axis="stretch"],
+[cross-axis-stretch] {
   -ms-flex-align: stretch;
   align-items: stretch;
 }
 
-[cross-axis="baseline"], [cross-axis-baseline] {
+[cross-axis="baseline"],
+[cross-axis-baseline] {
   -ms-flex-align: baseline;
   align-items: baseline;
 }
@@ -222,61 +232,72 @@
     NOTE: this does nothing if there is a
     single line of content in the container (spec)
 ----------------------------------------------- */
-[cross-axis-align="start"], [cross-axis-align-start] {
+[cross-axis-align="start"],
+[cross-axis-align-start] {
   -ms-flex-line-pack: start;
   align-content: flex-start;
 }
 
-[cross-axis-align="end"], [cross-axis-align-end] {
+[cross-axis-align="end"],
+[cross-axis-align-end] {
   -ms-flex-line-pack: end;
   align-content: flex-end;
 }
 
-[cross-axis-align="center"], [cross-axis-align-center] {
+[cross-axis-align="center"],
+[cross-axis-align-center] {
   -ms-flex-line-pack: center;
   align-content: center;
 }
 
-[cross-axis-align="stretch"], [cross-axis-align-stretch] {
+[cross-axis-align="stretch"],
+[cross-axis-align-stretch] {
   -ms-flex-line-pack: stretch;
   align-content: stretch;
 }
 
-[cross-axis-align="space-between"], [cross-axis-align-space-between] {
+[cross-axis-align="space-between"],
+[cross-axis-align-space-between] {
   -ms-flex-line-pack: justify;
   align-content: space-between;
 }
 
-[cross-axis-align="space-around"], [cross-axis-align-space-around] {
+[cross-axis-align="space-around"],
+[cross-axis-align-space-around] {
   -ms-flex-line-pack: distribute;
   align-content: space-around;
 }
 
 /* self, for overriding the parent settings above
 ----------------------------------------------- */
-[self="start"], [self-start] {
+[self="start"],
+[self-start] {
   -ms-flex-item-align: start;
   align-self: flex-start;
 }
 
-[self="end"], [self-end] {
+[self="end"],
+[self-end] {
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
-[self="center"], [self-center] {
+[self="center"],
+[self-center] {
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
 }
 
-[self="stretch"], [self-stretch] {
+[self="stretch"],
+[self-stretch] {
   -ms-flex-item-align: stretch;
   -ms-grid-row-align: stretch;
   align-self: stretch;
 }
 
-[self="baseline"], [self-baseline] {
+[self="baseline"],
+[self-baseline] {
   -ms-flex-item-align: baseline;
   align-self: baseline;
 }
@@ -403,62 +424,74 @@
   flex-shrink: 12;
 }
 
-[order="1"], [order-1], [first] {
+[order="1"], [order-1],
+[first] {
   -ms-flex-order: 1;
   order: 1;
 }
 
-[order="2"], [order-2], [second] {
+[order="2"], [order-2],
+[second] {
   -ms-flex-order: 2;
   order: 2;
 }
 
-[order="3"], [order-3], [third] {
+[order="3"], [order-3],
+[third] {
   -ms-flex-order: 3;
   order: 3;
 }
 
-[order="4"], [order-4], [fourth] {
+[order="4"], [order-4],
+[fourth] {
   -ms-flex-order: 4;
   order: 4;
 }
 
-[order="5"], [order-5], [fifth] {
+[order="5"], [order-5],
+[fifth] {
   -ms-flex-order: 5;
   order: 5;
 }
 
-[order="6"], [order-6], [sixth] {
+[order="6"], [order-6],
+[sixth] {
   -ms-flex-order: 6;
   order: 6;
 }
 
-[order="7"], [order-7], [seventh] {
+[order="7"], [order-7],
+[seventh] {
   -ms-flex-order: 7;
   order: 7;
 }
 
-[order="8"], [order-8], [eighth] {
+[order="8"], [order-8],
+[eighth] {
   -ms-flex-order: 8;
   order: 8;
 }
 
-[order="9"], [order-9], [ninth] {
+[order="9"], [order-9],
+[ninth] {
   -ms-flex-order: 9;
   order: 9;
 }
 
-[order="10"], [order-10], [tenth] {
+[order="10"], [order-10],
+[tenth] {
   -ms-flex-order: 10;
   order: 10;
 }
 
-[order="11"], [order-11], [eleventh] {
+[order="11"], [order-11],
+[eleventh] {
   -ms-flex-order: 11;
   order: 11;
 }
 
-[order="12"], [order-12], [twelfth] {
+[order="12"], [order-12],
+[twelfth] {
   -ms-flex-order: 12;
   order: 12;
 }
@@ -3319,6 +3352,9 @@
   align-content: "space-around";
 }
 
+/* spacers
+  - handy for quick prototyping
+   -------------------------------- */
 [pad-auto-sides] {
   padding: 0 auto;
 }

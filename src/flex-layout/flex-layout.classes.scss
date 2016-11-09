@@ -7,7 +7,7 @@
 // .flex {}
 // .basis-auto {}
 @each $map in $fxLayoutRules {
-  #{ make-class-names(map-get($map, name), map-get($map, mod), $fxPrefix) } {
+  #{ make-class-names(map-get($map, name), map-get($map, mod), $fxLayoutClassesPrefix) } {
     @each $key, $value in map-get($map, rules)  {
       #{$key}: $value;
     }

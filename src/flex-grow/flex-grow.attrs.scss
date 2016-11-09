@@ -19,7 +19,7 @@
 // type-of(blue)   => color
 @each $growProp in $fxGrowPropsList {
   @for $i from 1 through 12 {
-    #{make-attr-names($growProp, $i, $fxPrefix)} {
+    #{make-attr-names($growProp, $i, $fxGrowAttrsPrefix)} {
         flex-#{$growProp}: $i;
     }
   }

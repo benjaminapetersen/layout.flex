@@ -1,29 +1,32 @@
 @import '../variables';
 @import '../functions';
 
+/* spacers
+  - handy for quick prototyping
+   -------------------------------- */
 // NOTE: the spacers fit best in the realm of classes, they aren't very fitting as attrs.
 // perhaps will drop the generation of this file? complications for building?
-[#{$fxPrefix}pad-auto-sides] {
+[#{$fxSpacersAttrsPrefix}pad-auto-sides] {
   padding:0 auto;
 }
-[#{$fxPrefix}mar-auto-sides] {
+[#{$fxSpacersAttrsPrefix}mar-auto-sides] {
   margin:0 auto;
 }
 // TODO: decide if these should all be run through the em() fn
 // TODO: flexible style as others:
 // [pad="sm"],[pad-sm],[pad][sm]
 @each $size in $fxSpacerSizes {
-  [#{$fxPrefix}pad-#{first($size)}] {
+  [#{$fxSpacersAttrsPrefix}pad-#{first($size)}] {
     padding: second($size) (second($size) * 1.5);
   }
-  [#{$fxPrefix}mar-#{first($size)}] {
+  [#{$fxSpacersAttrsPrefix}mar-#{first($size)}] {
     margin: second($size) (second($size) * 1.5);
   }
   @each $side in $fxSpacerSides {
-    [#{$fxPrefix}pad-#{first($side)}-#{first($size)}] {
+    [#{$fxSpacersAttrsPrefix}pad-#{first($side)}-#{first($size)}] {
       padding-#{$side}: second($size) third($size);
     }
-    [#{$fxPrefix}mar-#{first($side)}-#{first($size)}] {
+    [#{$fxSpacersAttrsPrefix}mar-#{first($side)}-#{first($size)}] {
       margin-#{$side}: second($size) third($size);
     }
   }

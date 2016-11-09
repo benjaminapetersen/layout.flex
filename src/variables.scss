@@ -1,7 +1,33 @@
 // basic vars
 // -----------------------------------------------
 // optional prefix could be useful for namespace
-$fxPrefix:    ''; // data- for attribs
+$fxPrefix:                  '';
+
+// Each module, both for classes & attrs separately, has its own prefix variable
+// that defaults to the global, which defaults to nothing.  If desired, a prefix
+// can be added to all modules or only individual modules.  For example, if using
+// this framework next to Bootstrap, the "row" class in the layout module may need
+// to be `fx-row` or something to ensure collisions are avoided.
+// There is no default as a framework like Bootstrap is not necessary, flex works
+// perfectly fine as a layout system on its own and will likely be the default in
+// the near future.
+$fxLayoutAttrsPrefix:       $fxPrefix;  // data-* is a sensible option for attribs
+$fxGrowAttrsPrefix:         $fxPrefix;
+$fxOrderAttrsPrefix:        $fxPrefix;
+$fxAxisAttrsPrefix:         $fxPrefix;
+$fxMediaQueryAttrsPrefix:   $fxPrefix;
+$fxResizeAttrsPrefix:       $fxPrefix;
+$fxSpacersAttrsPrefix:      $fxPrefix;
+
+$fxLayoutClassesPrefix:     $fxPrefix;  // fx-* suggested to avoid collision with 'row', etc in other frameworks
+$fxGrowClassesPrefix:       $fxPrefix;
+$fxOrderClassesPrefix:      $fxPrefix;
+$fxAxisClassesPrefix:       $fxPrefix;
+$fxMediaQueryClassesPrefix: $fxPrefix;
+$fxResizeClassesPrefix:     $fxPrefix;
+$fxSpacersClassesPrefix:    $fxPrefix;
+
+
 $fxBaseFont:  14;
 
 $fxNumNil:    0;
@@ -20,16 +46,16 @@ $fxNumMax:    300;
 // em($num) -> 10em,
 // etc.
 $fxNumMap: (
-  nil:        $fxNumNil,
-  xs:         $fxNumXS,
-  sm:         $fxNumSM,
-  md:         $fxNumMD,
-  lg:         $fxNumLG,
-  xl:         $fxNumXL,
-  xxl:        $fxNumXXL,
-  xxxl:       $fxNumXXXL,
-  xxxxl:      $fxNumXXXXL,
-  max:        $fxNumMax
+  nil:        0,
+  xs:         2,
+  sm:         4,
+  md:         6,
+  lg:         10,
+  xl:         15,
+  xxl:        20,
+  xxxl:       30,
+  xxxxl:      40,
+  max:        300 // arbitrarily large
 );
 
 
@@ -239,10 +265,8 @@ $fxNumMap: (
   )
 );
 
-//
 // @debug @type-of((1,2,3,4));
 // @debug @type-of((foo: bar));
-
 
 // grow & shrink
 // -----------------------------------------------

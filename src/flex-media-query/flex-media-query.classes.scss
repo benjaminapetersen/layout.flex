@@ -9,12 +9,12 @@
 @each $size, $query in $fxMediaSizes {
   @media (unquote($query)) {
     @each $orientation in $fxMediaOrientation {
-      .#{make-dash-name($size, $orientation, $fxPrefix)} {
+      .#{make-dash-name($size, $orientation, $fxMediaQueryClassesPrefix)} {
         flex-direction: $orientation !important;
       }
     }
 
-    .#{make-dash-name(conceal, $size, $fxPrefix)} {
+    .#{make-dash-name(conceal, $size, $fxMediaQueryClassesPrefix)} {
       display: none !important;
     }
   }
@@ -29,12 +29,12 @@
 @each $device, $query in $fxMediaDevices {
   @media (unquote($query)) {
     @each $orientation in $fxMediaOrientation {
-      .#{make-dash-name($device, $orientation, $fxPrefix)} {
+      .#{make-dash-name($device, $orientation, $fxMediaQueryClassesPrefix)} {
         flex-direction: $orientation !important;
       }
     }
 
-    .#{make-dash-name(conceal, $device, $fxPrefix)} {
+    .#{make-dash-name(conceal, $device, $fxMediaQueryClassesPrefix)} {
       display: none !important;
     }
   }

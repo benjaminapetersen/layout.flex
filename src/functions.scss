@@ -109,18 +109,18 @@
 // flex
 // row-inline
 // NOTE: does not return a valid selector!
-@function make-dash-name($name, $mod, $fxPrefix) {
+@function make-dash-name($name, $mod, $pre) {
   @if $mod {
-    @return #{$fxPrefix}#{$name}-#{$mod};
+    @return #{$pre}#{$name}-#{$mod};
   }
-  @return #{$fxPrefix}#{$name};
+  @return #{$pre}#{$name};
 }
 
 // for attr names that are key-value pairs:
 // <name>="<mod>"
 // basis="auto"
 // NOTE: does not return a valid selector!
-@function make-key-eq-val-name($name, $mod, $fxPrefix) {
+@function make-key-eq-val-name($name, $mod, $pre) {
   //
   // @if type-of($name) != "string" {
   //   @warn "$name: `#{$name}` is not a string";
@@ -130,7 +130,7 @@
   //   @warn "$mod: `#{$mod}` is not a string";
   // }
   @if $mod {
-    @return '#{$fxPrefix}#{$name}="#{$mod}"';
+    @return '#{$pre}#{$name}="#{$mod}"';
   }
   @return false;
 }
@@ -139,10 +139,10 @@
 // .row
 // .row-reverse
 // .row.reverse
-@function make-class-names($name, $mod, $fxPrefix) {
-  $dash-name: make-dash-name($name, $mod, $fxPrefix);
+@function make-class-names($name, $mod, $pre) {
+  $dash-name: make-dash-name($name, $mod, $pre);
   // note: we don't need key-val-name for classes, but its a proxy for now
-  $key-val-name: make-key-eq-val-name($name, $mod, $fxPrefix);
+  $key-val-name: make-key-eq-val-name($name, $mod, $pre);
   @if $key-val-name {
     @if(type-of($mod) == string) {
       @return '.#{$dash-name}, .#{$name}.#{$mod}';
@@ -168,15 +168,15 @@
 //
 // TODO: should we generate data-* attrs?
 //
-@function make-attr-names($name, $mod, $fxPrefix) {
-  $key-val-name: make-key-eq-val-name($name, $mod, $fxPrefix);
-  $dash-name: make-dash-name($name, $mod, $fxPrefix);
+@function make-attr-names($name, $mod, $pre) {
+  $key-val-name: make-key-eq-val-name($name, $mod, $pre);
+  $dash-name: make-dash-name($name, $mod, $pre);
 
   // if we have a key="val" name generated,
   // we can also create [key][val]
   @if $key-val-name {
     @if(type-of($mod) == string) {
-      @return '[#{$key-val-name}], [#{$dash-name}], [#{$fxPrefix}#{$name}][#{$fxPrefix}#{$mod}]';
+      @return '[#{$key-val-name}], [#{$dash-name}], [#{$pre}#{$name}][#{$pre}#{$mod}]';
     } @else {
       @return '[#{$key-val-name}], [#{$dash-name}]';
     }

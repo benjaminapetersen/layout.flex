@@ -18,7 +18,7 @@
 // type-of(blue)   => color
 @each $growProp in $fxGrowPropsList {
   @for $i from 1 through 12 {
-    #{make-class-names($growProp, $i, $fxPrefix)} {
+    #{make-class-names($growProp, $i, $fxGrowAttrsPrefix)} {
         flex-#{$growProp}: $i;
     }
   }

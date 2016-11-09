@@ -3259,6 +3259,9 @@
   align-content: "space-around";
 }
 
+/* spacers
+  - handy for quick prototyping
+   -------------------------------- */
 .pad-auto-sides {
   padding: 0 auto;
 }

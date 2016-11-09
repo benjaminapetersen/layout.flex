@@ -13,7 +13,7 @@
 /* primary two xis */
 @each $jc-key, $jc-val in $fxJustifyContentMap {
     @each $ai-key, $ai-val in $fxAlignItemsMap {
-        .#{$fxPrefix}axis-#{$jc-key}-#{$ai-key} {
+        .#{$fxAxisClassesPrefix}axis-#{$jc-key}-#{$ai-key} {
             justify-content: $jc-val;
             align-items: $ai-val;
         }
@@ -23,7 +23,7 @@
 @each $jc-key, $jc-val in $fxJustifyContentMap {
     @each $ai-key, $ai-val in $fxAlignItemsMap {
         @each $ac-key, $ac-val in $fxAlignContentMap {
-            .#{$fxPrefix}axis-#{$jc-key}-#{$ai-key}-#{$ac-key} {
+            .#{$fxAxisClassesPrefix}axis-#{$jc-key}-#{$ai-key}-#{$ac-key} {
                 justify-content: $jc-val;
                 align-items: $ai-val;
                 align-content: $ac-val;
