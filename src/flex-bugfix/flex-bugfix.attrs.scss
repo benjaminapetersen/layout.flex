@@ -1,9 +1,9 @@
 @import '../variables';
 @import '../functions';
 
-/* layout attrs
+/* flex bug fixes
   -------------------------------- */
-@each $map in $fxLayoutRules {
+@each $map in $fxFlexBugFixes {
   #{make-attr-names(map-get($map, name), map-get($map, mod), $fxLayoutAttrsPrefix)} {
     // TODO: rules() might be better as a list than a map,
     // as some rules have the same name (ie, whatever, see break-word)

@@ -72,7 +72,13 @@ $fxNumMap: (
   (
     name: flex,
     rules: (
-      flex: 1 1 0%
+      flex-grow: 1,
+      flex-shrink: 1,
+      flex-basis: 0
+      // https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored
+      // swappning in these rules is essentially the same as above, except in Safari
+      // flex-shrink: 0,
+      // flex-basis: auto
     )
   ), (
     name: flex,
@@ -162,7 +168,7 @@ $fxNumMap: (
       height: 100%
     )
   ),
-  // next set is miscellaneous
+  // TODO: break this next set out into a separate list for utils. its not flex core 
   (
     name: hide,
     rules: (
@@ -255,12 +261,28 @@ $fxNumMap: (
     rules: (
       right: 0px
     )
-  ),
-  // tmp
+  )
+);
+
+// largely inspired by this list:
+// https://github.com/philipwalton/flexbugs
+// TODO: if possible, these should be absorbed up into other rules,
+// and the framework should take care of the problem on behalf of the user
+$fxFlexBugFixes: (
   (
-    name: shadow-sm,
+    // https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored
+    // TODO: this bug fix will ideally be built into [flex] and .flex
+    // however, I am not currenlty reproducing in Chrome, FF, Safari or IE via the
+    // demo/app.<attrs||classes>.html file
+    name: fix-flex-shrink,
     rules: (
-      box-shadow: 0px 0px 2px 2px #e6e6e6
+      flex-shrink: 1,
+      flex-basis: auto
+    )
+  ), (
+    name: fix-align-items-overflow,
+    rules: (
+      // TODO: list out rules
     )
   )
 );

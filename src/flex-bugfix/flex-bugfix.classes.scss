@@ -1,9 +1,9 @@
 @import '../variables';
 @import '../functions';
 
-/* layout classes
+/* flex bug fixes
    -------------------------------- */
-@each $map in $fxLayoutRules {
+@each $map in $fxFlexBugFixes {
   #{ make-class-names(map-get($map, name), map-get($map, mod), $fxLayoutClassesPrefix) } {
     @each $key, $value in map-get($map, rules)  {
       #{$key}: $value;

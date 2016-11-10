@@ -1,4 +1,4 @@
-/* classes
+/* layout classes
    -------------------------------- */
 .layout {
   display: -ms-flexbox;
@@ -6,8 +6,12 @@
 }
 
 .flex {
-  -ms-flex: 1 1 0%;
-  flex: 1 1 0%;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
 }
 
 .flex-content, .flex.content {
@@ -157,8 +161,4 @@
 
 .right {
   right: 0px;
-}
-
-.shadow-sm {
-  box-shadow: 0px 0px 2px 2px #e6e6e6;
 }

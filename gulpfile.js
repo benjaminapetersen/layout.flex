@@ -54,7 +54,8 @@
     'flex-axis',
     'flex-grow',
     'flex-order',
-    'flex-media-query'
+    'flex-media-query',
+    'flex-bugfix'
   ];
   // nonCore are optional due to providing only syntax sugar, or being
   // naturally larger in file size.
