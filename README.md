@@ -74,6 +74,21 @@ In case you need to install alongside another framework, copy the `variables.scs
 @import '/path/to/layout.flex/src/flex-order/flex-axis.classes';
 ```
 
+This will allow you to change:
+
+```css
+/* from this */
+[row] {}
+[flex] {}
+.row {}
+.flex {}
+/* to something like this */  
+[fx-row] {}
+[fx-flex] {}
+.fx-row {}
+.fx-flex {}
+```
+
 ## Docs
 
 Checkout the [docs](./docs) directory.
