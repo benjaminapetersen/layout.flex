@@ -81,7 +81,7 @@ Checkout the [docs](./docs) directory.
 
 ## Demos
 
-Coming soon.
+To run the demos, fork or clone the repo and run `npm install` followed by `gulp serve` from the root.  Demos will grow over time.
 
 
 
