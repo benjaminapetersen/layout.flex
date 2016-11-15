@@ -52,12 +52,12 @@ Alternatively, you can include only the modules you need from either `dist/class
 
 ```html
 <!-- for classes -->
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-layout.classes.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-grow.classes.scc" />
+<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-layout.classes.css" />
+<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-grow.classes.css" />
 
 <!-- for attributes -->
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-layout.attrs.scc" />
-<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-grow.attrs.scc" />
+<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-layout.attrs.css" />
+<link rel="stylesheet" href="/path/to/layout.flex/dist/classes/flex-grow.attrs.css" />
 
 ```
 
