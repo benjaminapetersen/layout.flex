@@ -1,3 +1,11 @@
+/* get the browser sync banner out of the way
+ -------------------------------- */
+#__bs_notify__ {
+  opacity: 0.5;
+  top: 95% !important;
+  bottom: 0;
+}
+
 /* simple theme
  -------------------------------- */
 html,
