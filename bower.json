@@ -9,7 +9,7 @@
   "description": "Small, composable flex utilities. Conceptually similar to Polymer CSS layout & Angular Material CSS but agnostic to look and feel.",
   "license": "MIT",
   "main": [
-    "dist/layout.flex.classes.css"
+    "dist/layout.flex.classes.all.css"
   ],
   "ignore": [
     "node_modules",
