@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Small, composable flex utilities. Conceptually similar to Polymer CSS layout & Angular Material CSS but agnostic to look and feel.",
   "main": [
-    "dist/layout.flex.classes.min.css"
+    "dist/layout.flex.classes.all.css"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
